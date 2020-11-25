@@ -6,9 +6,11 @@ function initMap() {
     zoom: 14,
     styles: mapStyle
   });
+  var tent = './tentIcon.png';
   const marker = new google.maps.Marker({
     position: { lat: 39.739, lng: -104.990 },
     map: map,
+    icon: tent
   });
 }
 
