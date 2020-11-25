@@ -6,7 +6,15 @@ function initMap() {
     zoom: 14,
     styles: mapStyle
   });
-  var tent = './tentIcon.png';
+  const tent = {
+    url:
+      "./tentIcon.png",
+    size: new google.maps.Size(10, 10),
+    origin: new google.maps.Point(0, 0),
+   // The anchor for this image is the base of the flagpole at (0, 32).
+   anchor: new google.maps.Point(0, 32),
+ };
+  // let tent = './tentIcon.png';
   const marker = new google.maps.Marker({
     position: { lat: 39.739, lng: -104.990 },
     map: map,
@@ -19,7 +27,7 @@ var mapStyle = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#ebe3cd"
+        "color": "#eee4c9"
       }
     ]
   },
@@ -36,6 +44,14 @@ var mapStyle = [
     "stylers": [
       {
         "color": "#f5f1e6"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "stylers": [
+      {
+        "visibility": "off"
       }
     ]
   },
@@ -124,7 +140,7 @@ var mapStyle = [
     "elementType": "geometry.fill",
     "stylers": [
       {
-        "color": "#a5b076"
+        "color": "#b1bb86"
       }
     ]
   },
@@ -163,7 +179,7 @@ var mapStyle = [
         "color": "#fdfcf8"
       },
       {
-        "weight": 1
+        "weight": 0.5
       }
     ]
   },
