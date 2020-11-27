@@ -49,22 +49,8 @@ function initMap() {
   // console.log(mayMap.size);
 }
 
-for (const camp in mayMap) {
-  console.log(camp);
-  addMarkerWithTimeout(camp.center, 200);
-}
-
-function addMarkerWithTimeout(position, timeout) {
-  window.setTimeout(() => {
-    markers.push(
-      new google.maps.Marker({
-        position: position,
-        map,
-        animation: google.maps.Animation.DROP,
-      })
-    );
-  }, timeout);
-}
+Object.entries(mayMap).forEach((camp, key) => addMarkerWithTimeout(camp[1].center, key * 1000));
+  // addMarkerWithTimeout(camp[1].center, key * 200);
 
 function addMarkerWithTimeout(position, timeout) {
   window.setTimeout(() => {
