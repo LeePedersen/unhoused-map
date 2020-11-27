@@ -32,19 +32,9 @@ const mayMap = {
   },
 };
 
-let position1 = { lat: 39.739, lng: -104.990 };
-let position2 = { lat: 39.734, lng: -104.998 };
-let position3 = { lat: 39.731, lng: -104.990 };
+console.log(mayMap.welton25th.center);
 
-$(document).ready(function() {
-  initMap();
-  setTimeout(function() {
-    position1 = { lat: 39.730, lng: -104.990 };
-    position2 = { lat: 39.734, lng: -104.994 };
-    position3 = { lat: 39.733, lng: -104.990 };
-    initMap();
-  }, 5000);
-});
+let markers = [];
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -54,45 +44,39 @@ function initMap() {
   });
   const tent = {
     url: "./tentIconResized.png",
- };
-  const marker = new google.maps.Marker({
-    position: position1,
-    map: map,
-    icon: tent
-  });
-  const marker2 = new google.maps.Marker({
-    position: position2,
-    map: map,
-    icon: tent
-  });
-  const marker3 = new google.maps.Marker({
-    position: position3,
-    map: map,
-    icon: tent
-  });
-  const marker4 = new google.maps.Marker({
-    position: { lat: 39.731, lng: -104.9901 },
-    map: map,
-    icon: tent
-  });
-  const marker5 = new google.maps.Marker({
-    position: { lat: 39.731, lng: -104.9902 },
-    map: map,
-    icon: tent
-  });
+  };
+  console.log("hit initMap");
+  // console.log(mayMap.size);
 }
 
-// function addMarkerWithTimeout(position, timeout) {
-//   window.setTimeout(() => {
-//     markers.push(
-//       new google.maps.Marker({
-//         position: position,
-//         map,
-//         animation: google.maps.Animation.DROP,
-//       })
-//     );
-//   }, timeout);
-// }
+for (const camp in mayMap) {
+  console.log(camp);
+  addMarkerWithTimeout(camp.center, 200);
+}
+
+function addMarkerWithTimeout(position, timeout) {
+  window.setTimeout(() => {
+    markers.push(
+      new google.maps.Marker({
+        position: position,
+        map,
+        animation: google.maps.Animation.DROP,
+      })
+    );
+  }, timeout);
+}
+
+function addMarkerWithTimeout(position, timeout) {
+  window.setTimeout(() => {
+    markers.push(
+      new google.maps.Marker({
+        position: position,
+        map,
+        // animation: google.maps.Animation.DROP,
+      })
+    );
+  }, timeout);
+}
 
 var mapStyle = [
   {
