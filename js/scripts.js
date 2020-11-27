@@ -1,4 +1,50 @@
+
 let map;
+
+const mayMap = {
+  stout22nd: {
+    center: { lat: 39.7514, lng: -104.9858 },
+    population: 150,
+  },
+  california21st: {
+    center: { lat: 39.74988081444342, lng: -104.98614049754438 },
+    population: 100,
+  },
+  arkins: {
+    center: { lat: 39.770366437456126, lng: -104.98156603283451 },
+    population: 150,
+  },
+  washington13th: {
+    center: { lat: 39.736901630492326, lng: -104.97873995993287 },
+    population: 100,
+  },
+  arapahoe25th: {
+    center: { lat: 39.7563385156032, lng: -104.98483701760286 },
+    population: 10,
+  },
+  welton25th: {
+    center: { lat: 39.75298262156344, lng: -104.98049675993238 },
+    population: 20,
+  },
+  blairCaldwell: {
+    center: { lat: 39.75240922793768, lng: -104.98160900226182 },
+    population: 50,
+  },
+};
+
+let position1 = { lat: 39.739, lng: -104.990 };
+let position2 = { lat: 39.734, lng: -104.998 };
+let position3 = { lat: 39.731, lng: -104.990 };
+
+$(document).ready(function() {
+  initMap();
+  setTimeout(function() {
+    position1 = { lat: 39.730, lng: -104.990 };
+    position2 = { lat: 39.734, lng: -104.994 };
+    position3 = { lat: 39.733, lng: -104.990 };
+    initMap();
+  }, 5000);
+});
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -7,20 +53,46 @@ function initMap() {
     styles: mapStyle
   });
   const tent = {
-    url:
-      "./tentIcon.png",
-    size: new google.maps.Size(10, 10),
-    origin: new google.maps.Point(0, 0),
-   // The anchor for this image is the base of the flagpole at (0, 32).
-   anchor: new google.maps.Point(0, 32),
+    url: "./tentIconResized.png",
  };
-  // let tent = './tentIcon.png';
   const marker = new google.maps.Marker({
-    position: { lat: 39.739, lng: -104.990 },
+    position: position1,
+    map: map,
+    icon: tent
+  });
+  const marker2 = new google.maps.Marker({
+    position: position2,
+    map: map,
+    icon: tent
+  });
+  const marker3 = new google.maps.Marker({
+    position: position3,
+    map: map,
+    icon: tent
+  });
+  const marker4 = new google.maps.Marker({
+    position: { lat: 39.731, lng: -104.9901 },
+    map: map,
+    icon: tent
+  });
+  const marker5 = new google.maps.Marker({
+    position: { lat: 39.731, lng: -104.9902 },
     map: map,
     icon: tent
   });
 }
+
+// function addMarkerWithTimeout(position, timeout) {
+//   window.setTimeout(() => {
+//     markers.push(
+//       new google.maps.Marker({
+//         position: position,
+//         map,
+//         animation: google.maps.Animation.DROP,
+//       })
+//     );
+//   }, timeout);
+// }
 
 var mapStyle = [
   {
