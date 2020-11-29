@@ -16,19 +16,39 @@ function addMonths() {
     window.setTimeout(() => {
       clearMarkers();
       addMarkers(month[1]);
-    }, (2000 + (key * 2000)));
+    }, (1000 + (key * 1000)));
   });
 }
 
 function addMarkers(month) {
   Object.entries(month).forEach((camp, key) => {
-    markers.push(
-      new google.maps.Marker({
-        position: camp[1].center,
-        map,
-        // icon: tent
-      })
-    );
+    if (camp[1].swept) {
+      markers.push(
+        new google.maps.Circle({
+          // strokeColor: "#FF0000",
+          // strokeOpacity: 0.8,
+          strokeWeight: 0,
+          fillColor: "#FF0000",
+          fillOpacity: 0.35,
+          map,
+          center: camp[1].center,
+          radius: camp[1].population,
+          // icon: tent
+        })
+      );
+    } else {
+      markers.push(
+        new google.maps.Circle({
+          strokeWeight: 0,
+          fillColor: "#134ead",
+          fillOpacity: 0.35,
+          map,
+          center: camp[1].center,
+          radius: camp[1].population,
+          // icon: tent
+        })
+      );
+    }
   })
 }
 
