@@ -19,37 +19,18 @@ function addMonths() {
   });
 }
 
-// function addMarkers(month) {
-//   Object.entries(month).forEach((camp, key) => {
-//     let color;
-//     { camp[1].swept ? color = "#FF0000" : color = "#134ead" }
-//     markers.push(
-//       new google.maps.Circle({
-//         strokeWeight: 0,
-//         fillColor: color,
-//         fillOpacity: 0.35,
-//         map,
-//         center: camp[1].center,
-//         radius: camp[1].population,
-//       })
-//     );
-//   })
-// }
-
-
 function addMarkers(month) {
   Object.entries(month).forEach((camp, key) => {
-    let size;
-    { camp[1].population < 41 ? size = 20 : size = camp[1].population / 2 }
-    let url;
-    { camp[1].swept ? url = "./redTent.svg" : url = "./blackTent.svg" }
+    let color;
+    { camp[1].swept ? color = "#FF0000" : color = "#134ead" }
     markers.push(
-      new google.maps.Marker({
-        position: camp[1].center,
+      new google.maps.Circle({
+        strokeWeight: 0,
+        fillColor: color,
+        fillOpacity: 0.35,
         map,
-        icon: {
-          url: url, scaledSize: new google.maps.Size(size, size)
-        }
+        center: camp[1].center,
+        radius: camp[1].population,
       })
     );
   })
