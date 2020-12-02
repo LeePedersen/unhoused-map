@@ -1,5 +1,6 @@
-- figure out better representation of camps - tents are ugly as is. possibly population circles?
 - style page, explanation of what's happening
 - finish entering data, get better estimate of numbers of people at camps
-- colors for camps being swept? turn red the month before if swept?
-- make clearMarkers into clearMarkersWhenSwept somehow
+- make clearMarkers into clearMarkersWhenSwept somehow?
+
+
+const tent = {"./campground-solid.svg", size: new google.maps.Size(10,10)};

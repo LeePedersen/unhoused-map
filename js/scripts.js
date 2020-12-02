@@ -1,6 +1,5 @@
 let map;
 let markers = [];
-const tent = "./tentIconResized.png";
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -16,39 +15,43 @@ function addMonths() {
     window.setTimeout(() => {
       clearMarkers();
       addMarkers(month[1]);
-    }, (1000 + (key * 1000)));
+    }, (1000 + (key * 2000)));
   });
 }
 
+// function addMarkers(month) {
+//   Object.entries(month).forEach((camp, key) => {
+//     let color;
+//     { camp[1].swept ? color = "#FF0000" : color = "#134ead" }
+//     markers.push(
+//       new google.maps.Circle({
+//         strokeWeight: 0,
+//         fillColor: color,
+//         fillOpacity: 0.35,
+//         map,
+//         center: camp[1].center,
+//         radius: camp[1].population,
+//       })
+//     );
+//   })
+// }
+
+
 function addMarkers(month) {
   Object.entries(month).forEach((camp, key) => {
-    if (camp[1].swept) {
-      markers.push(
-        new google.maps.Circle({
-          // strokeColor: "#FF0000",
-          // strokeOpacity: 0.8,
-          strokeWeight: 0,
-          fillColor: "#FF0000",
-          fillOpacity: 0.35,
-          map,
-          center: camp[1].center,
-          radius: camp[1].population,
-          // icon: tent
-        })
-      );
-    } else {
-      markers.push(
-        new google.maps.Circle({
-          strokeWeight: 0,
-          fillColor: "#134ead",
-          fillOpacity: 0.35,
-          map,
-          center: camp[1].center,
-          radius: camp[1].population,
-          // icon: tent
-        })
-      );
-    }
+    let size;
+    { camp[1].population < 41 ? size = 20 : size = camp[1].population / 2 }
+    let url;
+    { camp[1].swept ? url = "./redTent.svg" : url = "./blackTent.svg" }
+    markers.push(
+      new google.maps.Marker({
+        position: camp[1].center,
+        map,
+        icon: {
+          url: url, scaledSize: new google.maps.Size(size, size)
+        }
+      })
+    );
   })
 }
 
