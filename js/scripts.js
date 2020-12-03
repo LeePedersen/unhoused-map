@@ -15,6 +15,7 @@ function addMonths() {
     window.setTimeout(() => {
       clearMarkers();
       addMarkers(month[1]);
+      addMonthLabel(month[1]);
     }, (1000 + (key * 2000)));
   });
 }
@@ -29,7 +30,11 @@ function addMarkers(month) {
       new google.maps.Marker({
         position: camp[1].center,
         map,
-        label: "camp",
+        label: {
+          text: camp[1].name,
+          // color: "#ffffff",
+          fontWeight: "bold",
+        },
         icon: {
           url: url,
           scaledSize: new google.maps.Size(size, size)
@@ -37,6 +42,22 @@ function addMarkers(month) {
       })
     );
   })
+}
+
+function addMonthLabel(month) {
+  console.log(map.getCenter());
+  markers.push(
+    new google.maps.Marker({
+      position: {lat: (map.getCenter().lat), lng: (map.getCenter().lng)},
+      map,
+      label: {
+        text: "month"
+      },
+      icon: {
+        url: "./rectangle.png"
+      }
+    })
+  );
 }
 
 function clearMarkers() {

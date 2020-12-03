@@ -133,7 +133,7 @@ const campsByMonth = {
     arkins: {
       name: "Arkins Court",
       center: { lat: 39.770366437456126, lng: -104.98156603283451 },
-      population: 150,
+      population: 200,
       swept: false,
     },
     welton29th: {
@@ -195,7 +195,7 @@ const campsByMonth = {
     arkins: {
       name: "Arkins Court",
       center: { lat: 39.770366437456126, lng: -104.98156603283451 },
-      population: 150,
+      population: 250,
       swept: false,
     },
     welton29th: {
@@ -275,7 +275,7 @@ const campsByMonth = {
     arkins: {
       name: "Arkins Court",
       center: { lat: 39.770366437456126, lng: -104.98156603283451 },
-      population: 150,
+      population: 250,
       swept: false,
     },
     logan14th: {
@@ -361,7 +361,7 @@ const campsByMonth = {
     arkins: {
       name: "Arkins Court",
       center: { lat: 39.770366437456126, lng: -104.98156603283451 },
-      population: 150,
+      population: 300,
       swept: false,
     },
     logan14th: {
@@ -453,7 +453,7 @@ const campsByMonth = {
     arkins: {
       name: "Arkins Court",
       center: { lat: 39.770366437456126, lng: -104.98156603283451 },
-      population: 150,
+      population: 300,
       swept: false,
     },
     wazee22nd: {
@@ -510,7 +510,7 @@ const campsByMonth = {
       name: "Arkins Court",
       center: { lat: 39.770366437456126, lng: -104.98156603283451 },
       population: 300,
-      swept: false,
+      swept: true,
     },
   },
 };
