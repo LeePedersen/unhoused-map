@@ -5,7 +5,8 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 39.756394427359105, lng: -104.98740673111536 },
     zoom: 14,
-    styles: mapStyle
+    styles: mapStyle,
+    disableDefaultUI: true,
   });
   addMonths();
 }
