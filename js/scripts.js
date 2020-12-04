@@ -28,16 +28,38 @@ function addMarkers(month) {
       { camp[1].population < 41 ? size = 20 : size = camp[1].population / 2 }
       let url;
       { camp[1].swept ? url = "./redTent.svg" : url = "./blackTent.svg" }
+      markers.push(
+        new google.maps.Circle({
+          strokeWeight: 0,
+          fillColor: "grey",
+          fillOpacity: 0.55,
+          map,
+          center: camp[1].center,
+          radius: (size * 4),
+        })
+      );
       // markers.push(
-      //   new google.maps.Circle({
-      //     strokeWeight: 0,
-      //     fillColor: "red",
-      //     fillOpacity: 0.35,
+      //   new google.maps.Marker({
+      //     position: camp[1].center,
       //     map,
-      //     center: camp[1].center,
-      //     radius: (size * 4),
+      //     // label: {
+      //     //   text: camp[1].name,
+      //     //   // color: "#ffffff",
+      //     //   fontWeight: "bold",
+      //     // },
+      //     icon: {
+      //       url: url,
+      //       // scaledSize: new google.maps.Size(size, size)
+      //       scaledSize: new google.maps.Size(30, 30)
+      //     }
       //   })
       // );
+      var image = {
+        url: url,
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(13, 14),
+        scaledSize: new google.maps.Size(25, 25)
+      };
       markers.push(
         new google.maps.Marker({
           position: camp[1].center,
@@ -47,10 +69,7 @@ function addMarkers(month) {
           //   // color: "#ffffff",
           //   fontWeight: "bold",
           // },
-          icon: {
-            url: url,
-            scaledSize: new google.maps.Size(size, size)
-          }
+          icon: image,
         })
       );
     }
