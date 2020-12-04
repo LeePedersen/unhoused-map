@@ -3,7 +3,7 @@ let markers = [];
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 39.75466197035792, lng: -104.98515233629519 },
+    center: { lat: 39.756394427359105, lng: -104.98740673111536 },
     zoom: 14,
     styles: mapStyle
   });
@@ -15,52 +15,39 @@ function addMonths() {
     window.setTimeout(() => {
       clearMarkers();
       addMarkers(month[1]);
-      addMonthLabel(month[1]);
+      document.getElementById("monthName").textContent = month[1].monthName;
     }, (1000 + (key * 2000)));
   });
 }
 
 function addMarkers(month) {
   Object.entries(month).forEach((camp, key) => {
-    let size;
-    { camp[1].population < 41 ? size = 20 : size = camp[1].population / 2 }
-    let url;
-    { camp[1].swept ? url = "./redTent.svg" : url = "./blackTent.svg" }
-    markers.push(
-      new google.maps.Marker({
-        position: camp[1].center,
-        map,
-        label: {
-          text: camp[1].name,
-          // color: "#ffffff",
-          fontWeight: "bold",
-        },
-        icon: {
-          url: url,
-          scaledSize: new google.maps.Size(size, size)
-        }
-      })
-    );
+    if (!camp[1].monthName) {
+      let size;
+      { camp[1].population < 41 ? size = 20 : size = camp[1].population / 2 }
+      let url;
+      { camp[1].swept ? url = "./redTent.svg" : url = "./blackTent.svg" }
+      markers.push(
+        new google.maps.Marker({
+          position: camp[1].center,
+          map,
+          // label: {
+          //   text: camp[1].name,
+          //   // color: "#ffffff",
+          //   fontWeight: "bold",
+          // },
+          icon: {
+            url: url,
+            scaledSize: new google.maps.Size(size, size)
+          }
+        })
+      );
+    }
   })
 }
 
-function addMonthLabel(month) {
-  console.log(map.getCenter());
-  markers.push(
-    new google.maps.Marker({
-      position: {lat: (map.getCenter().lat), lng: (map.getCenter().lng)},
-      map,
-      label: {
-        text: "month"
-      },
-      icon: {
-        url: "./rectangle.png"
-      }
-    })
-  );
-}
-
 function clearMarkers() {
+  console.log(markers);
   for (let i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
   }

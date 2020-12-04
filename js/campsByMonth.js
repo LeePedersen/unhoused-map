@@ -1,5 +1,6 @@
 const campsByMonth = {
   mayCamps: {
+    monthName: "May",
     stout22nd: {
       name: "Stout and 22nd",
       center: { lat: 39.7514, lng: -104.9858 },
@@ -44,6 +45,7 @@ const campsByMonth = {
     },
   },
   midMayCamps: {
+    monthName: "Mid-May",
     stout22nd: {
       name: "Stout and 22nd",
       center: { lat: 39.7514, lng: -104.9858 },
@@ -112,6 +114,7 @@ const campsByMonth = {
     },
   },
   juneCamps: {
+    monthName: "June",
     stout22nd: {
       name: "Stout and 22nd",
       center: { lat: 39.7514, lng: -104.9858 },
@@ -174,6 +177,7 @@ const campsByMonth = {
     },
   },
   julyCamps: {
+    monthName: "July",
     lincolnPark: {
       name: "Lincoln Park",
       center: { lat: 39.7320785592142, lng: -105.00244677021708 },
@@ -242,6 +246,7 @@ const campsByMonth = {
     },
   },
   augustCamps: {
+    monthName: "August",
     clarkson13th: {
       name: "13th and Clarkson",
       center: { lat: 39.73688467944993, lng: -104.97760917348667 },
@@ -334,6 +339,7 @@ const campsByMonth = {
     },
   },
   septemberCamps: {
+    monthName: "May",
     stout22nd: {
       name: "Stout and 22nd",
       center: { lat: 39.7514, lng: -104.9858 },
@@ -408,6 +414,7 @@ const campsByMonth = {
     },
   },
   octoberCamps: {
+    monthName: "May",
     logan14th: {
       name: "14th and Logan",
       center: { lat: 39.73840227214621, lng: -104.98232513581428 },
@@ -476,6 +483,7 @@ const campsByMonth = {
     },
   },
   novemberCamps: {
+    monthName: "May",
     wazee22nd: {
       name: "22nd and Wazee",
       center: { lat: 39.756832830282285, lng: -104.99282652046314 },
