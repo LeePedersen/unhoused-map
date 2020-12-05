@@ -16,9 +16,16 @@ function addMonths() {
     window.setTimeout(() => {
       clearMarkers();
       addMarkers(month[1]);
-      document.getElementById("monthName").textContent = month[1].monthName;
+      printMonth(month[1]);
     }, (1000 + (key * 2000)));
   });
+}
+
+function clearMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
 }
 
 function addMarkers(month) {
@@ -31,72 +38,35 @@ function addMarkers(month) {
       markers.push(
         new google.maps.Circle({
           strokeWeight: 0,
-          fillColor: "grey",
-          fillOpacity: 0.55,
+          fillColor: "#ff5959",
+          fillOpacity: 0.25,
           map,
           center: camp[1].center,
-          radius: (size * 4),
+          radius: (camp[1].population * 3),
         })
       );
-      // markers.push(
-      //   new google.maps.Marker({
-      //     position: camp[1].center,
-      //     map,
-      //     // label: {
-      //     //   text: camp[1].name,
-      //     //   // color: "#ffffff",
-      //     //   fontWeight: "bold",
-      //     // },
-      //     icon: {
-      //       url: url,
-      //       // scaledSize: new google.maps.Size(size, size)
-      //       scaledSize: new google.maps.Size(30, 30)
-      //     }
-      //   })
-      // );
-      var image = {
+      let image = {
         url: url,
         origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(13, 14),
+        anchor: new google.maps.Point(13, 15),
         scaledSize: new google.maps.Size(25, 25)
       };
-      markers.push(
-        new google.maps.Marker({
-          position: camp[1].center,
-          map,
-          // label: {
-          //   text: camp[1].name,
-          //   // color: "#ffffff",
-          //   fontWeight: "bold",
-          // },
-          icon: image,
-        })
-      );
+      let marker = new google.maps.Marker({
+        position: camp[1].center,
+        map,
+        icon: image,
+      })
+      const infowindow = new google.maps.InfoWindow({
+        content: "<div> <p>" + camp[1].name + "</p> <p> Number of residents: " + camp[1].population + "</p> </div>",
+      });
+      marker.addListener("click", () => {
+        infowindow.open(map, marker);
+      });
+      markers.push(marker);
     }
   })
 }
-//
-// function addMarkers(month) {
-//   Object.entries(month).forEach((camp, key) => {
-//     let color;
-//     { camp[1].swept ? color = "#FF0000" : color = "#134ead" }
-//     markers.push(
-//       new google.maps.Circle({
-//         strokeWeight: 0,
-//         fillColor: color,
-//         fillOpacity: 0.35,
-//         map,
-//         center: camp[1].center,
-//         radius: camp[1].population,
-//       })
-//     );
-//   })
-// }
 
-function clearMarkers() {
-  console.log(markers);
-  for (let i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-  markers = [];
+function printMonth(month) {
+  document.getElementById("monthName").textContent = month.monthName;
 }

@@ -1,14 +1,40 @@
-#map {
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: #4a2212;
+}
+
+.column {
+  /* width: 50%; */
+  height: 100%;
+  float: left;
+}
+
+#columnLeft {
+  width: 60%;
+}
+
+#columnRight {
+  width: 40%;
+}
+
+#map {
+  height: 97%;
+  width: 100%;
   margin: 10px;
+  box-shadow: 1px 1px 2px;
 }
 
 #key {
   position: absolute;
   background-color: white;
   width: 100px;
-  right: 30px;
-  bottom: 30px;
+  left: 40%;
+  bottom: 50px;
   padding: 10px;
   box-shadow: 1px 1px 2px;
   border-radius: 2px;
@@ -30,12 +56,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-p {
-  color: #4a2212;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+#description {
+  padding: 20px;
 }
