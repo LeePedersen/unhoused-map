@@ -34,7 +34,7 @@ function addMarkers(month) {
       let size;
       { camp[1].population < 41 ? size = 20 : size = camp[1].population / 2 }
       let url;
-      { camp[1].swept ? url = "./redTent.svg" : url = "./blackTent.svg" }
+      { camp[1].swept ? url = "./img/redTent.svg" : url = "./img/blackTent.svg" }
       markers.push(
         new google.maps.Circle({
           strokeWeight: 0,
@@ -68,5 +68,30 @@ function addMarkers(month) {
 }
 
 function printMonth(month) {
-  document.getElementById("monthName").textContent = month.monthName;
+  for (let i = 0; i < 8; i++) {
+    let monthText = document.getElementsByClassName("monthName")[i];
+    if (monthText.innerText === month.monthName) {
+      monthText.id = "selected";
+    } else {
+      monthText.id = null;
+    }
+  }
 }
+
+// function clickMonths() {
+//   document.getElementsByClassName("monthName").addListener("click", () => {
+//     console.log("clicked");
+//   })
+// }
+
+let elements = document.getElementsByClassName("monthName");
+console.log(elements);
+
+for (var i = 0; i < 4; i++) {
+  console.log("kfdslkjfdsa");
+}
+
+Array.from(elements).forEach(function (element) {
+  console.log("kjafd");
+  console.log(element)
+});
