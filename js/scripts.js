@@ -78,20 +78,24 @@ function printMonth(month) {
   }
 }
 
-// function clickMonths() {
-//   document.getElementsByClassName("monthName").addListener("click", () => {
-//     console.log("clicked");
-//   })
-// }
+document.addEventListener("DOMContentLoaded", function(e) {
+  let elements = document.getElementsByClassName("monthName");
+  Array.from(elements).forEach(function (element) {
+    element.addEventListener("click", () => {
+      Array.from(elements).forEach(function (element) {
+        element.id = null;
+      })
+      element.id = "selected";
+      showMonth(element.innerText.toString());
+    })
+  });
+})
 
-let elements = document.getElementsByClassName("monthName");
-console.log(elements);
-
-for (var i = 0; i < 4; i++) {
-  console.log("kfdslkjfdsa");
+function showMonth(monthString) {
+  clearMarkers();
+  Object.entries(campsByMonth).forEach((month, key) => {
+    if (month[1].monthName.toString() === monthString) {
+      addMarkers(month[1]);
+    }
+  })
 }
-
-Array.from(elements).forEach(function (element) {
-  console.log("kjafd");
-  console.log(element)
-});
