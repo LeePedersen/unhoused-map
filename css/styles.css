@@ -11,7 +11,6 @@ p, span {
 }
 
 .column {
-  /* width: 50%; */
   height: 100%;
   float: left;
 }
@@ -33,14 +32,11 @@ p, span {
 
 #key {
   padding: 20px;
-  /* position: absolute;
-  background-color: white;
-  width: 100px;
-  left: 50%;
-  bottom: 50px;
-  padding: 10px;
+  margin: 20px;
   box-shadow: 1px 1px 2px;
-  border-radius: 2px; */
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
 }
 
 #month {
@@ -56,6 +52,8 @@ p, span {
   padding-top: 10px;
   box-shadow: 1px 1px 2px;
   border-radius: 2px;
+  white-space: nowrap;
+  text-align: center;
 }
 
 #description {
@@ -73,13 +71,14 @@ p, span {
   padding: 10px;
 }
 
-.exampleTent {
+.keyImg {
   width: 30px;
+  vertical-align: -40%;
+  margin-right: 5px;
 }
 
-.dot {
+#dot {
   height: 30px;
-  width: 30px;
   background-color: rgb(255, 89, 89, .4);
   border-radius: 50%;
   display: inline-block;
