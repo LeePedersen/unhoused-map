@@ -37,10 +37,10 @@ function addMarkers(month) {
       let info;
       if (camp[1].swept) {
         url = "./img/redTent.svg";
-        info = "<div> <p>" + camp[1].name + "</p> <p> Number of residents: " + camp[1].population + "</p> <p> Swept on " + camp[1].sweepDate + ". " + camp[1].notes + "</p> </div>";
+        info = "<div> <p>" + camp[1].name + "</p> <p> Approximate number of residents: " + camp[1].population + "</p> <p> Swept on " + camp[1].sweepDate + ". " + camp[1].notes + "</p> </div>";
       } else {
         url = "./img/blackTent.svg";
-        info = "<div> <p>" + camp[1].name + "</p> <p> Number of residents: " + camp[1].population + "</p> </div>";
+        info = "<div> <p>" + camp[1].name + "</p> <p> Approximate number of residents: " + camp[1].population + "</p> </div>";
       }
       markers.push(
         new google.maps.Circle({
