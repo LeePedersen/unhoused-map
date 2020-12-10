@@ -3,16 +3,43 @@
   <head>
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="utf-8">
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
     <script src="js/mapStyle.js" charset="utf-8"></script>
     <script src="js/campsByMonth.js" charset="utf-8"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
     <script defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4d6Wjum8TkYpKxH0C-3MaeqaIVSKnJhU&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN3BVvb-DH8-Lwfr-2dkIOLVupD9M9Gnc&callback=initMap">
     </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <title>unhoused map</title>
   </head>
   <body>
-    <div id="map"></div>
+    <div class="column" id="columnLeft">
+      <div id="month">
+        <span class="monthName">May</span>
+        <span class="monthName">Mid-May</span>
+        <span class="monthName">June</span>
+        <span class="monthName">July</span>
+        <span class="monthName">August</span>
+        <span class="monthName">September</span>
+        <span class="monthName">October</span>
+        <span class="monthName">November</span>
+      </div>
+      <div id="map"></div>
+    </div>
+    <div class="column" id="columnRight">
+      <div id="description">
+        <p>This map shows the displacement of homeless encampments in Denver by sweeps over a period of seven months. The time lapse shows how these sweeps push people around from place to place. Click on each month to see camps that were present that month. Click on camps to see details about that camp.</p>
+        <p>These sweeps are cruel and inhumane, and violate <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/homeless-shelters/unsheltered-homelessness.html">CDC guidelines</a> that say that particularly during the pandemic, sweeps are dangerous not only to homeless individuals but the community as a whole. Sweeps accomplish nothing except harm for these people, frequently leading to people losing all of their belongings including vital survival gear.</p>
+        <p>Learn more: </p>
+        <p><a href="https://denverhomelessoutloud.org/">Denver Homeless Out Loud</a></p>
+        <p><a href="https://www.coloradocoalition.org/sites/default/files/2020-10/Issue%20Brief-Race%20Ethnicity%20and%20Homelessness_final.pdf">Colorado Coalition for the Homeless Issue Brief: Race, Ethnicity and Homelessness</a></p>
+      </div>
+      <div id="key">
+        <p><img src="img/redTent.svg" alt="red tent icon" class="keyImg"> Camp that was swept this month </p>
+        <p><img src="img/blackTent.svg" alt="black tent icon" class="keyImg"> Camp that was not swept this month </p>
+        <p><span id="dot" class="keyImg"></span> Circle size is proportionate with the number of residents in a camp </p>
+      </div>
+    </div>
   </body>
 </html>

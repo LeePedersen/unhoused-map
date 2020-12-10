@@ -1,9 +1,85 @@
-#map {
-  height: 100%;
-  margin: 10px;
-}
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #fff2f2;
+}
+
+p, span {
+  color: #4a2212;
+  font-family: 'Roboto', sans-serif;
+}
+
+.column {
+  height: 100%;
+  float: left;
+}
+
+#columnLeft {
+  width: 60%;
+}
+
+#columnRight {
+  width: 40%;
+}
+
+#map {
+  height: 97%;
+  width: 100%;
+  margin: 10px;
+  box-shadow: 1px 1px 2px;
+}
+
+#key {
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 1px 1px 2px;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+}
+
+#month {
+  position: absolute;
+  background-color: white;
+  left: 30px;
+  top: 20px;
+  width: 50%;
+  height: 30px;
+  z-index: 3;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  box-shadow: 1px 1px 2px;
+  border-radius: 2px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#description {
+  padding: 20px;
+}
+
+.monthName {
+  padding: 10px;
+  color: #8c5641;
+}
+
+#selected {
+  color: #4a2212;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.keyImg {
+  width: 30px;
+  vertical-align: -40%;
+  margin-right: 5px;
+}
+
+#dot {
+  height: 30px;
+  background-color: rgb(255, 89, 89, .4);
+  border-radius: 50%;
+  display: inline-block;
 }

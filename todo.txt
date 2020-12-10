@@ -1,6 +1,5 @@
 - style page, explanation of what's happening
-- finish entering data, get better estimate of numbers of people at camps
+- get better estimate of numbers of people at camps
+- correct lincoln park address
 - make clearMarkers into clearMarkersWhenSwept somehow?
-
-
-const tent = {"./campground-solid.svg", size: new google.maps.Size(10,10)};
+- reformat language, add key, explanation near the top
