@@ -1,5 +1,6 @@
 let map;
 let markers = [];
+let infowindow = null;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -63,10 +64,11 @@ function addMarkers(month) {
         map,
         icon: image,
       })
-      const infowindow = new google.maps.InfoWindow({
-        content: info,
-      });
-      marker.addListener("click", () => {
+      marker.addListener('click', () => {
+        {infowindow && infowindow.close()}
+        infowindow = new google.maps.InfoWindow({
+          content: info,
+        });
         infowindow.open(map, marker);
       });
       markers.push(marker);
