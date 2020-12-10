@@ -2,3 +2,4 @@
 - get better estimate of numbers of people at camps
 - correct lincoln park address
 - make clearMarkers into clearMarkersWhenSwept somehow?
+- reformat language, add key, explanation near the top

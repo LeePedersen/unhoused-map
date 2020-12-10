@@ -34,7 +34,14 @@ function addMarkers(month) {
       let size;
       { camp[1].population < 41 ? size = 20 : size = camp[1].population / 2 }
       let url;
-      { camp[1].swept ? url = "./img/redTent.svg" : url = "./img/blackTent.svg" }
+      let info;
+      if (camp[1].swept) {
+        url = "./img/redTent.svg";
+        info = "<div> <p>" + camp[1].name + "</p> <p> Number of residents: " + camp[1].population + "</p> <p> Swept on " + camp[1].sweepDate + ". " + camp[1].notes + "</p> </div>";
+      } else {
+        url = "./img/blackTent.svg";
+        info = "<div> <p>" + camp[1].name + "</p> <p> Number of residents: " + camp[1].population + "</p> </div>";
+      }
       markers.push(
         new google.maps.Circle({
           strokeWeight: 0,
@@ -57,7 +64,7 @@ function addMarkers(month) {
         icon: image,
       })
       const infowindow = new google.maps.InfoWindow({
-        content: "<div> <p>" + camp[1].name + "</p> <p> Number of residents: " + camp[1].population + "</p> </div>",
+        content: info,
       });
       marker.addListener("click", () => {
         infowindow.open(map, marker);
