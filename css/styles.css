@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #fff2f2;
+  background-color: #848f78;
 }
 
 p, span {
@@ -20,14 +20,21 @@ p, span {
 }
 
 #columnRight {
+  position: absolute;
+  right: 0;
   width: 40%;
+  box-shadow: 0 0 100px 100px #848f78;
+  z-index: 4;
 }
 
 #map {
-  height: 97%;
+  height: 110%;
   width: 100%;
-  margin: 10px;
-  box-shadow: 1px 1px 2px;
+  /* margin: 10px; */
+  /* box-shadow: 0 0 8px 8px white inset; */
+  /* box-shadow: 0 0 100px 100px #848f78 inset; */
+  /* filter: blur(10px); */
+  /* box-shadow: 1px 1px 2px; */
 }
 
 #key {
@@ -79,7 +86,7 @@ p, span {
 
 #dot {
   height: 30px;
-  background-color: rgb(255, 89, 89, .4);
+  background-color: rgb(255, 255, 255, .4);
   border-radius: 50%;
   display: inline-block;
 }

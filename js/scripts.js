@@ -46,7 +46,7 @@ function addMarkers(month) {
       markers.push(
         new google.maps.Circle({
           strokeWeight: 0,
-          fillColor: "#ff5959",
+          fillColor: "white",
           fillOpacity: 0.25,
           map,
           center: camp[1].center,
