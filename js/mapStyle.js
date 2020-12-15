@@ -284,7 +284,7 @@ const mapStyle = [
     "elementType": "geometry.fill",
     "stylers": [
       {
-        "color": "#8a91c1"
+        "color": "#8bafd6"
       },
       {
         "visibility": "on"

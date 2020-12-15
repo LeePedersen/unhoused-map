@@ -10,6 +10,11 @@ p, span {
   font-family: 'Overpass', sans-serif;
 }
 
+a {
+  color: #e6e6e6;
+  text-decoration: none;
+}
+
 .column {
   height: 100%;
   float: left;
@@ -30,12 +35,6 @@ p, span {
 #map {
   height: 100%;
   width: 100%;
-  /* padding-left: 20px;
-  margin-right: 20px; */
-  /* box-shadow: 0 0 8px 8px white inset; */
-  /* box-shadow: 0 0 100px 100px #838c91 inset; */
-  /* filter: blur(10px); */
-  /* box-shadow: 1px 1px 2px; */
 }
 
 #key {
@@ -43,9 +42,11 @@ p, span {
   margin: 20px;
   box-shadow: 1px 1px 2px;
   border-radius: 2px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   color: white;
+  background-color: #838c91;
+  z-index: 5;
 }
 
 #month {
@@ -53,7 +54,7 @@ p, span {
   background-color: #838c91;
   left: 0;
   width: 100px;
-  height: 100%;
+  height: 90%;
   z-index: 3;
   box-shadow: 0 0 50px 50px #838c91;
   text-align: center;
