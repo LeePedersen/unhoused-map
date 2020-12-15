@@ -3,7 +3,7 @@ const mapStyle = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#848f78"
+        "color": "#838c91"
       },
       {
         "visibility": "simplified"
@@ -63,7 +63,7 @@ const mapStyle = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#848f78"
+        "color": "#838c91"
       },
       {
         "visibility": "simplified"
@@ -116,7 +116,7 @@ const mapStyle = [
     "elementType": "geometry.fill",
     "stylers": [
       {
-        "color": "#848f78"
+        "color": "#838c91"
       },
       {
         "lightness": -15
