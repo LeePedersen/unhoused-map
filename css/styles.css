@@ -7,6 +7,7 @@ html, body {
 
 p, span {
   /* color: white; */
+  color: #39424d;
   font-family: 'Overpass', sans-serif;
 }
 
@@ -28,7 +29,7 @@ a {
   position: absolute;
   right: 0;
   width: 30%;
-  box-shadow: 0 0 50px 50px #838c91;
+  box-shadow: 0 0 30px 30px #838c91;
   z-index: 4;
 }
 
@@ -54,18 +55,20 @@ a {
   background-color: #838c91;
   left: 0;
   width: 100px;
-  height: 90%;
+  height: 100%;
   z-index: 3;
-  box-shadow: 0 0 50px 50px #838c91;
+  box-shadow: 0 0 30px 30px #838c91;
   text-align: center;
   vertical-align: middle;
   justify-content: center;
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 #description {
   padding: 20px;
   color: white;
+  height: 70%;
+  overflow-y: auto;
 }
 
 .monthName {
@@ -91,4 +94,8 @@ a {
   background-color: rgb(255, 255, 255, .4);
   border-radius: 50%;
   display: inline-block;
+}
+
+.white {
+  color: white;
 }
