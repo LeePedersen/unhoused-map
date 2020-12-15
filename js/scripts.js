@@ -47,7 +47,7 @@ function addMarkers(month) {
         new google.maps.Circle({
           strokeWeight: 0,
           fillColor: "white",
-          fillOpacity: 0.25,
+          fillOpacity: 0.4,
           map,
           center: camp[1].center,
           radius: (camp[1].population * 3),
@@ -68,6 +68,7 @@ function addMarkers(month) {
         {infowindow && infowindow.close()}
         infowindow = new google.maps.InfoWindow({
           content: info,
+          maxWidth: 200,
         });
         infowindow.open(map, marker);
       });

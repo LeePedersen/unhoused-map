@@ -6,7 +6,7 @@ html, body {
 }
 
 p, span {
-  color: white;
+  /* color: white; */
   font-family: 'Overpass', sans-serif;
 }
 
@@ -45,6 +45,7 @@ p, span {
   border-radius: 2px;
   position: absolute;
   bottom: 0;
+  color: white;
 }
 
 #month {
@@ -63,6 +64,7 @@ p, span {
 
 #description {
   padding: 20px;
+  color: white;
 }
 
 .monthName {
