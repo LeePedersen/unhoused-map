@@ -2,17 +2,25 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #838c91;
+  background-color: #697277;
 }
 
-p, span {
-  /* color: white; */
+p, span, h1 {
   color: #39424d;
   font-family: 'Overpass', sans-serif;
 }
 
+#title {
+  color: white;
+}
+
+#titleResized {
+  display: none;
+}
+
 a {
-  color: #e6e6e6;
+  color: #aaccf0;
+  /* text-shadow: -0.2px 0.2px 0 white, 0.2px 0.2px 0 white; */
   text-decoration: none;
 }
 
@@ -29,7 +37,7 @@ a {
   position: absolute;
   right: 0;
   width: 30%;
-  box-shadow: 0 0 30px 30px #838c91;
+  box-shadow: 0 0 30px 30px #697277;
   z-index: 4;
 }
 
@@ -39,25 +47,26 @@ a {
 }
 
 #key {
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 10px;
   box-shadow: 1px 1px 2px;
   border-radius: 2px;
   position: fixed;
   bottom: 0;
+  right: 0;
   color: white;
-  background-color: #838c91;
+  background-color: #697277;
   z-index: 5;
 }
 
 #month {
   position: absolute;
-  background-color: #838c91;
   left: 0;
-  width: 100px;
+  width: 120px;
   height: 100%;
   z-index: 3;
-  box-shadow: 0 0 30px 30px #838c91;
+  background-color: #697277;
+  box-shadow: 0 0 30px 30px #697277;
   text-align: center;
   vertical-align: middle;
   justify-content: center;
@@ -100,32 +109,51 @@ a {
   color: white;
 }
 
+.keytext {
+  color: white;
+  font-size: 15px;
+  margin: 7px;
+}
+
 @media screen and (max-width: 1000px) {
   #columnLeft {
     width: 100%;
   }
+
   #columnRight {
     position: relative;
     width: 100%;
     z-index: 4;
   }
+
   #key {
-    padding: 10px;
-    margin: 10px;
-    box-shadow: 1px 1px 2px;
-    border-radius: 2px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    color: white;
-    background-color: #838c91;
-    z-index: 5;
     height: 100px;
   }
-  .keytext {
+
+  #titleResized {
     color: white;
-    font-size: 15px;
-    margin: 7px;
-    /* padding-bottom: 4; */
+    display: initial;
+    position: fixed;
+    top: 0;
+    background-color: #697277;
+    /* box-shadow: 0 0 10px 10px #697277; */
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    z-index: 7;
   }
+
+  #title {
+    display: none;
+  }
+
+  #month {
+    padding-top: 60px;
+    box-shadow: none;
+  }
+
+  #columnRight {
+    box-shadow: none;
+  }
+
 }
