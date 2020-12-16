@@ -590,7 +590,7 @@ const campsByMonth = {
       population: 300,
       swept: true,
       sweepDate: "2020-11-30",
-      notes: "Tons of tents and property illegally destroyed, multiple residents arrested, residents not let back into sweep area to get their belongings",
+      notes: "Many, many tents and property illegally destroyed, multiple residents arrested, residents not let back into sweep area to get their belongings",
     },
   },
 };
