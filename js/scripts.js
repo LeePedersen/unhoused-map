@@ -68,7 +68,7 @@ function addMarkers(month) {
         {infowindow && infowindow.close()}
         infowindow = new google.maps.InfoWindow({
           content: info,
-          maxWidth: 200,
+          maxWidth: 250,
         });
         infowindow.open(map, marker);
       });
