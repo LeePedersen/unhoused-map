@@ -20,7 +20,7 @@ const campsByMonth = {
     arkins: {
       name: "Arkins Court",
       center: { lat: 39.770366437456126, lng: -104.98156603283451 },
-      population: 150,
+      population: 100,
       swept: true,
       sweepDate: "2020-05-14",
       notes: "Tents and some property of people not present illegally destroyed. Residents returned after the sweep",
@@ -48,7 +48,7 @@ const campsByMonth = {
     blairCaldwell: {
       name: "Blair and Caldwell",
       center: { lat: 39.75240922793768, lng: -104.98160900226182 },
-      population: 50,
+      population: 25,
       swept: false,
     },
   },
@@ -237,7 +237,7 @@ const campsByMonth = {
     blake20th: {
       name: "20th and Blake",
       center: { lat: 39.753924220898696, lng: -104.99384281575655 },
-      population: 20,
+      population: 30,
       swept: false,
     },
     welton25th: {
@@ -331,12 +331,6 @@ const campsByMonth = {
       name: "14th and Pennsylvania",
       center: { lat: 39.73843667280359, lng: -104.9811901664974 },
       population: 50,
-      swept: false,
-    },
-    lincolnPark: {
-      name: "Lincoln Park",
-      center: { lat: 39.7320785592142, lng: -105.00244677021708 },
-      population: 100,
       swept: false,
     },
     arapahoe25th: {
@@ -464,7 +458,7 @@ const campsByMonth = {
     logan14th: {
       name: "14th and Logan",
       center: { lat: 39.73840227214621, lng: -104.98232513581428 },
-      population: 50,
+      population: 75,
       swept: true,
       sweepDate: "2020-10-06",
       notes: "Many tents and other property illegally destroyed. Some residents moved to the next block only to be swept the next day",
