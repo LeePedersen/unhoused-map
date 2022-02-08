@@ -1,6 +1,9 @@
 # Denver Sweeps Map
 
 _Webpage showing the displacement of homeless encampments in Denver, CO by sweeps._
+_Deployed [here][2]
+
+[2]: https://leepedersen.github.io/unhoused-map/
 
 ## Setup/Installation instructions:
 * Click the `Clone or download` button and copy the link.
